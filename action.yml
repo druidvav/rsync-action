@@ -10,6 +10,9 @@ inputs:
   remote_shell:
     description: 'remote shell'
     default: 'ssh'
+  excludes:
+    description: ''
+    default: [ ]
   parameters:
     description: 'misc params'
 branding:
