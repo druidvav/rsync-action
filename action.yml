@@ -1,0 +1,22 @@
+name: 'Rsync Command'
+description: ''
+inputs:
+  source:
+    description: 'source directory'
+    default: './'
+  destination:
+    description: 'destination directory'
+    default: 22
+  remote_shell:
+    description: 'remote shell'
+    default: 'ssh'
+  parameters:
+    description: 'misc params'
+branding:
+  icon: 'terminal'
+  color: 'gray-dark'
+runs:
+  using: 'composite'
+  steps:
+    - run: rsync -e "${{ inputs.remote_shell }}" "${{ inputs.source }}" "${{ inputs.destination }}" ${{ inputs.parameters }}
+      shell: bash
